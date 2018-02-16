@@ -1,12 +1,7 @@
 #!/usr/bin/env python
-'''
-
-For this exercise, create a digital clock display on the screen
-
-'''
 import sys, pygame
 from datetime import datetime
-assert sys.version_info >= (3,4), 'This script requires at least Python 3.4' 
+assert sys.version_info >= (3,4), 'This script requires at least Python 3.4'
 
 screen_size = (800,600)
 FPS = 60
@@ -30,13 +25,16 @@ def main():
 				pygame.quit()
 				sys.exit(0)
 
-		print(datetime.now().time())
+		#print(datetime.now().time())
 
-		text = "Hello World!"
+
+		text = ("Time: "+str(datetime.now().time()))
+
+
 		f = font.render(text, True, white)
 		(fwidth,fheight) = font.size(text)
 		screen.blit(f,(x,y))
-		
+
 		pygame.display.flip()
 
 if __name__ == '__main__':
